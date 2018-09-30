@@ -4,4 +4,4 @@ class bla(object):
 		self.property1 = fruit
 		
 	def print_something(self):
-		print "I was nothing, then you made me a %s that was nice" % self.property1
+		print("I was nothing, then you made me a %s that was nice" % self.property1) 
