@@ -1,5 +1,3 @@
-from copy import deepcopy
-
 class order:
 
     def __init__(self, mynum):
@@ -10,8 +8,8 @@ class order:
         self.OrderID = int(mynum)
         return self
     
-    def inc11mod5(self):
-        self.OrderID  = self.modOrderIDby(self.OrderID, 11, 5)
+    def inc11mod(self, modval):
+        self.OrderID  = self.modOrderIDby(self.OrderID, 11, modval)
         return self
 
     @staticmethod
@@ -22,10 +20,8 @@ class order:
     def modOrderIDby(cls, orderid, inc, val):
         return (cls.incrementOrderID(orderid, inc) % val)
     
-y = order(10)
-print(f"{y.OrderID}:{y.OrderType}")
-y.inc11mod5()
-print(f"{y.OrderID}:{y.OrderType}")
-
-
+y = order(81456834)
+print(f"Original::OrderID={y.OrderID},OrderType={y.OrderType}")
+y.inc11mod(5)
+print(f"AfterMod5::OrderID={y.OrderID},OrderType={y.OrderType}")
  
